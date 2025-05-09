@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx
+import { Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './pages/Home';
+import MatchResultsPage from './pages/MatchResults';
+import VendorDashboardPage from './pages/VendorDashboard';
+import VendorQuotesPage from './pages/VendorQuotesPage';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="min-h-screen bg-gray-50">
+      <Routes>
+        {/* Landing/onboarding form */}
+        <Route path="/" element={<HomePage />} />
 
-export default App
+        {/* After submit, show your matches */}
+        <Route path="/matches" element={<MatchResultsPage />} />
+
+        {/* Vendor portal */}
+        <Route path="/vendor" element={<VendorDashboardPage />} />
+
+        {/* Vendor quotes */}
+        <Route path="/vendor/quotes" element={<VendorQuotesPage />} />
+
+        {/* Catch-all: redirect unknown URLs back to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
+  );
+}
