@@ -1,12 +1,36 @@
-# React + Vite
+# WeddingMatch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+WeddingMatch is a web application designed to streamline wedding planning and guest management. 
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with:
+- Vite
+- React
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Setup
+Install the project dependencies:
+```bash
+npm install
+```
+
+### Running Locally
+To start the development server:
+```bash
+npm run dev
+```
+
+### Building for Production
+To build the application for production:
+```bash
+npm run build
+```
+
+### Linting
+To run the linter:
+```bash
+npm run lint
+```
